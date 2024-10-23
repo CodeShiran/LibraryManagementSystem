@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.addbooks_bttxt = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.addbooks_authortxt = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.addbbooks_pic = new System.Windows.Forms.PictureBox();
+            this.addbooks_addbtn = new System.Windows.Forms.Button();
+            this.addbooks_uptbtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.addbooks_statustxt = new System.Windows.Forms.ComboBox();
+            this.addbooks_bitxt = new System.Windows.Forms.DateTimePicker();
+            this.addbooks_clearbtn = new System.Windows.Forms.Button();
+            this.addbooks_dltbtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addbbooks_pic)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -61,14 +61,14 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Book Title";
             // 
-            // textBox5
+            // addbooks_bttxt
             // 
-            this.textBox5.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(87, 129);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(200, 25);
-            this.textBox5.TabIndex = 1;
+            this.addbooks_bttxt.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addbooks_bttxt.Location = new System.Drawing.Point(87, 129);
+            this.addbooks_bttxt.Multiline = true;
+            this.addbooks_bttxt.Name = "addbooks_bttxt";
+            this.addbooks_bttxt.Size = new System.Drawing.Size(200, 25);
+            this.addbooks_bttxt.TabIndex = 1;
             // 
             // label6
             // 
@@ -80,14 +80,14 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Author";
             // 
-            // textBox6
+            // addbooks_authortxt
             // 
-            this.textBox6.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(87, 167);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(200, 25);
-            this.textBox6.TabIndex = 1;
+            this.addbooks_authortxt.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addbooks_authortxt.Location = new System.Drawing.Point(87, 167);
+            this.addbooks_authortxt.Multiline = true;
+            this.addbooks_authortxt.Name = "addbooks_authortxt";
+            this.addbooks_authortxt.Size = new System.Drawing.Size(200, 25);
+            this.addbooks_authortxt.TabIndex = 1;
             // 
             // label7
             // 
@@ -99,64 +99,122 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Book Issued";
             // 
-            // pictureBox1
+            // addbbooks_pic
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(97, 10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.addbbooks_pic.Location = new System.Drawing.Point(97, 10);
+            this.addbbooks_pic.Name = "addbbooks_pic";
+            this.addbbooks_pic.Size = new System.Drawing.Size(100, 100);
+            this.addbbooks_pic.TabIndex = 2;
+            this.addbbooks_pic.TabStop = false;
             // 
-            // button1
+            // addbooks_addbtn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(128)))), ((int)(((byte)(235)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(82)))), ((int)(((byte)(255)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("SF Pro Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(33, 332);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 37);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "ADD";
-            this.button1.UseVisualStyleBackColor = false;
+            this.addbooks_addbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.addbooks_addbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(128)))), ((int)(((byte)(235)))));
+            this.addbooks_addbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(82)))), ((int)(((byte)(255)))));
+            this.addbooks_addbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addbooks_addbtn.Font = new System.Drawing.Font("SF Pro Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addbooks_addbtn.ForeColor = System.Drawing.Color.White;
+            this.addbooks_addbtn.Location = new System.Drawing.Point(33, 332);
+            this.addbooks_addbtn.Name = "addbooks_addbtn";
+            this.addbooks_addbtn.Size = new System.Drawing.Size(105, 37);
+            this.addbooks_addbtn.TabIndex = 3;
+            this.addbooks_addbtn.Text = "ADD";
+            this.addbooks_addbtn.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // addbooks_uptbtn
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(128)))), ((int)(((byte)(235)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(82)))), ((int)(((byte)(255)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("SF Pro Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(161, 332);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(105, 37);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "UPDATE";
-            this.button2.UseVisualStyleBackColor = false;
+            this.addbooks_uptbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.addbooks_uptbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(128)))), ((int)(((byte)(235)))));
+            this.addbooks_uptbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(82)))), ((int)(((byte)(255)))));
+            this.addbooks_uptbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addbooks_uptbtn.Font = new System.Drawing.Font("SF Pro Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addbooks_uptbtn.ForeColor = System.Drawing.Color.White;
+            this.addbooks_uptbtn.Location = new System.Drawing.Point(161, 332);
+            this.addbooks_uptbtn.Name = "addbooks_uptbtn";
+            this.addbooks_uptbtn.Size = new System.Drawing.Size(105, 37);
+            this.addbooks_uptbtn.TabIndex = 3;
+            this.addbooks_uptbtn.Text = "UPDATE";
+            this.addbooks_uptbtn.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.addbooks_statustxt);
+            this.panel1.Controls.Add(this.addbooks_bitxt);
+            this.panel1.Controls.Add(this.addbooks_clearbtn);
+            this.panel1.Controls.Add(this.addbooks_uptbtn);
+            this.panel1.Controls.Add(this.addbooks_dltbtn);
+            this.panel1.Controls.Add(this.addbooks_addbtn);
+            this.panel1.Controls.Add(this.addbbooks_pic);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.addbooks_authortxt);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.addbooks_bttxt);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(290, 470);
             this.panel1.TabIndex = 2;
+            // 
+            // addbooks_statustxt
+            // 
+            this.addbooks_statustxt.FormattingEnabled = true;
+            this.addbooks_statustxt.Items.AddRange(new object[] {
+            "Return",
+            "Not Return"});
+            this.addbooks_statustxt.Location = new System.Drawing.Point(87, 240);
+            this.addbooks_statustxt.Name = "addbooks_statustxt";
+            this.addbooks_statustxt.Size = new System.Drawing.Size(121, 24);
+            this.addbooks_statustxt.TabIndex = 5;
+            // 
+            // addbooks_bitxt
+            // 
+            this.addbooks_bitxt.Location = new System.Drawing.Point(87, 205);
+            this.addbooks_bitxt.Name = "addbooks_bitxt";
+            this.addbooks_bitxt.Size = new System.Drawing.Size(200, 22);
+            this.addbooks_bitxt.TabIndex = 4;
+            // 
+            // addbooks_clearbtn
+            // 
+            this.addbooks_clearbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.addbooks_clearbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(128)))), ((int)(((byte)(235)))));
+            this.addbooks_clearbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(82)))), ((int)(((byte)(255)))));
+            this.addbooks_clearbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addbooks_clearbtn.Font = new System.Drawing.Font("SF Pro Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addbooks_clearbtn.ForeColor = System.Drawing.Color.White;
+            this.addbooks_clearbtn.Location = new System.Drawing.Point(161, 375);
+            this.addbooks_clearbtn.Name = "addbooks_clearbtn";
+            this.addbooks_clearbtn.Size = new System.Drawing.Size(105, 37);
+            this.addbooks_clearbtn.TabIndex = 3;
+            this.addbooks_clearbtn.Text = "CLEAR";
+            this.addbooks_clearbtn.UseVisualStyleBackColor = false;
+            // 
+            // addbooks_dltbtn
+            // 
+            this.addbooks_dltbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.addbooks_dltbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(128)))), ((int)(((byte)(235)))));
+            this.addbooks_dltbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(82)))), ((int)(((byte)(255)))));
+            this.addbooks_dltbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addbooks_dltbtn.Font = new System.Drawing.Font("SF Pro Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addbooks_dltbtn.ForeColor = System.Drawing.Color.White;
+            this.addbooks_dltbtn.Location = new System.Drawing.Point(33, 375);
+            this.addbooks_dltbtn.Name = "addbooks_dltbtn";
+            this.addbooks_dltbtn.Size = new System.Drawing.Size(105, 37);
+            this.addbooks_dltbtn.TabIndex = 3;
+            this.addbooks_dltbtn.Text = "DELETE";
+            this.addbooks_dltbtn.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(5, 246);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 18);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Status";
             // 
             // dataGridView1
             // 
@@ -188,64 +246,6 @@
             this.panel2.Size = new System.Drawing.Size(465, 469);
             this.panel2.TabIndex = 3;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(87, 205);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 246);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Status";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Return",
-            "Not Return"});
-            this.comboBox1.Location = new System.Drawing.Point(87, 240);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 5;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(128)))), ((int)(((byte)(235)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(82)))), ((int)(((byte)(255)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("SF Pro Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(33, 375);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(105, 37);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "DELETE";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(128)))), ((int)(((byte)(235)))));
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(82)))), ((int)(((byte)(255)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("SF Pro Display", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(161, 375);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(105, 37);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "CLEAR";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
             // AddBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -254,7 +254,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "AddBooks";
             this.Size = new System.Drawing.Size(768, 476);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addbbooks_pic)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -267,21 +267,21 @@
         #endregion
 
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox addbooks_bttxt;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox addbooks_authortxt;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox addbbooks_pic;
+        private System.Windows.Forms.Button addbooks_addbtn;
+        private System.Windows.Forms.Button addbooks_uptbtn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox addbooks_statustxt;
+        private System.Windows.Forms.DateTimePicker addbooks_bitxt;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button addbooks_clearbtn;
+        private System.Windows.Forms.Button addbooks_dltbtn;
     }
 }
