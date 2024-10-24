@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.returnboo = new System.Windows.Forms.PictureBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,10 +51,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label9 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.rbimport_txt = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.returnboo)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -60,10 +61,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Controls.Add(this.rbimport_txt);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.returnboo);
             this.panel1.Controls.Add(this.textBox7);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label7);
@@ -83,6 +85,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(290, 470);
             this.panel1.TabIndex = 0;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Return ",
+            "Not Return"});
+            this.comboBox1.Location = new System.Drawing.Point(87, 398);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 4;
             // 
             // button2
             // 
@@ -114,28 +127,38 @@
             this.button1.Text = "RETURN";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
+            // returnboo
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(97, 10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.returnboo.Location = new System.Drawing.Point(97, 5);
+            this.returnboo.Name = "returnboo";
+            this.returnboo.Size = new System.Drawing.Size(90, 90);
+            this.returnboo.TabIndex = 2;
+            this.returnboo.TabStop = false;
             // 
             // textBox7
             // 
             this.textBox7.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(87, 351);
+            this.textBox7.Location = new System.Drawing.Point(87, 360);
             this.textBox7.Multiline = true;
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(200, 25);
             this.textBox7.TabIndex = 1;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(5, 398);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(50, 18);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Status";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(5, 351);
+            this.label7.Location = new System.Drawing.Point(5, 360);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(84, 18);
             this.label7.TabIndex = 0;
@@ -144,7 +167,7 @@
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(87, 313);
+            this.textBox6.Location = new System.Drawing.Point(87, 322);
             this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(200, 25);
@@ -154,7 +177,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(5, 313);
+            this.label6.Location = new System.Drawing.Point(5, 322);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 18);
             this.label6.TabIndex = 0;
@@ -163,7 +186,7 @@
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(87, 275);
+            this.textBox5.Location = new System.Drawing.Point(87, 284);
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(200, 25);
@@ -173,7 +196,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(5, 275);
+            this.label5.Location = new System.Drawing.Point(5, 284);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 18);
             this.label5.TabIndex = 0;
@@ -182,7 +205,7 @@
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(87, 237);
+            this.textBox4.Location = new System.Drawing.Point(87, 246);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(200, 25);
@@ -192,7 +215,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(5, 237);
+            this.label4.Location = new System.Drawing.Point(5, 246);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 18);
             this.label4.TabIndex = 0;
@@ -201,7 +224,7 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(87, 199);
+            this.textBox3.Location = new System.Drawing.Point(87, 208);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(200, 25);
@@ -211,7 +234,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(5, 199);
+            this.label3.Location = new System.Drawing.Point(5, 208);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(26, 18);
             this.label3.TabIndex = 0;
@@ -220,7 +243,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(87, 161);
+            this.textBox2.Location = new System.Drawing.Point(87, 170);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(200, 25);
@@ -230,7 +253,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(5, 161);
+            this.label2.Location = new System.Drawing.Point(5, 170);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 18);
             this.label2.TabIndex = 0;
@@ -239,17 +262,18 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(87, 123);
+            this.textBox1.Location = new System.Drawing.Point(87, 132);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(200, 25);
             this.textBox1.TabIndex = 1;
+            this.textBox1.Text = " ";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 123);
+            this.label1.Location = new System.Drawing.Point(5, 132);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 18);
             this.label1.TabIndex = 0;
@@ -285,26 +309,22 @@
             this.dataGridView1.Size = new System.Drawing.Size(458, 438);
             this.dataGridView1.TabIndex = 0;
             // 
-            // label9
+            // rbimport_txt
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(5, 389);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(50, 18);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Status";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Return ",
-            "Not Return"});
-            this.comboBox1.Location = new System.Drawing.Point(87, 389);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 4;
+            this.rbimport_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.rbimport_txt.FlatAppearance.BorderSize = 0;
+            this.rbimport_txt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(128)))), ((int)(((byte)(235)))));
+            this.rbimport_txt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(82)))), ((int)(((byte)(255)))));
+            this.rbimport_txt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbimport_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbimport_txt.ForeColor = System.Drawing.Color.White;
+            this.rbimport_txt.Location = new System.Drawing.Point(102, 98);
+            this.rbimport_txt.Name = "rbimport_txt";
+            this.rbimport_txt.Size = new System.Drawing.Size(75, 30);
+            this.rbimport_txt.TabIndex = 5;
+            this.rbimport_txt.Text = "Import";
+            this.rbimport_txt.UseVisualStyleBackColor = false;
+            this.rbimport_txt.Click += new System.EventHandler(this.rbimport_txt_Click);
             // 
             // ReturnBooks
             // 
@@ -316,7 +336,7 @@
             this.Size = new System.Drawing.Size(768, 476);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.returnboo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -345,9 +365,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox returnboo;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button rbimport_txt;
     }
 }

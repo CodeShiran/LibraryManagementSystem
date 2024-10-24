@@ -33,7 +33,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.addbooks_authortxt = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.addbbooks_pic = new System.Windows.Forms.PictureBox();
             this.addbooks_addbtn = new System.Windows.Forms.Button();
             this.addbooks_uptbtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -45,17 +44,19 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.addbbooks_pic)).BeginInit();
+            this.abimport_txt = new System.Windows.Forms.Button();
+            this.abimagebox = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.abimagebox)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(5, 129);
+            this.label5.Location = new System.Drawing.Point(5, 152);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 18);
             this.label5.TabIndex = 0;
@@ -64,7 +65,7 @@
             // addbooks_bttxt
             // 
             this.addbooks_bttxt.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addbooks_bttxt.Location = new System.Drawing.Point(87, 129);
+            this.addbooks_bttxt.Location = new System.Drawing.Point(87, 152);
             this.addbooks_bttxt.Multiline = true;
             this.addbooks_bttxt.Name = "addbooks_bttxt";
             this.addbooks_bttxt.Size = new System.Drawing.Size(200, 25);
@@ -74,7 +75,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(5, 168);
+            this.label6.Location = new System.Drawing.Point(5, 191);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 18);
             this.label6.TabIndex = 0;
@@ -83,7 +84,7 @@
             // addbooks_authortxt
             // 
             this.addbooks_authortxt.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addbooks_authortxt.Location = new System.Drawing.Point(87, 167);
+            this.addbooks_authortxt.Location = new System.Drawing.Point(87, 190);
             this.addbooks_authortxt.Multiline = true;
             this.addbooks_authortxt.Name = "addbooks_authortxt";
             this.addbooks_authortxt.Size = new System.Drawing.Size(200, 25);
@@ -93,19 +94,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(5, 207);
+            this.label7.Location = new System.Drawing.Point(5, 230);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(84, 18);
             this.label7.TabIndex = 0;
             this.label7.Text = "Book Issued";
-            // 
-            // addbbooks_pic
-            // 
-            this.addbbooks_pic.Location = new System.Drawing.Point(97, 10);
-            this.addbbooks_pic.Name = "addbbooks_pic";
-            this.addbbooks_pic.Size = new System.Drawing.Size(100, 100);
-            this.addbbooks_pic.TabIndex = 2;
-            this.addbbooks_pic.TabStop = false;
             // 
             // addbooks_addbtn
             // 
@@ -121,6 +114,7 @@
             this.addbooks_addbtn.TabIndex = 3;
             this.addbooks_addbtn.Text = "ADD";
             this.addbooks_addbtn.UseVisualStyleBackColor = false;
+            this.addbooks_addbtn.Click += new System.EventHandler(this.addbooks_addbtn_Click);
             // 
             // addbooks_uptbtn
             // 
@@ -140,13 +134,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Controls.Add(this.abimport_txt);
+            this.panel1.Controls.Add(this.abimagebox);
             this.panel1.Controls.Add(this.addbooks_statustxt);
             this.panel1.Controls.Add(this.addbooks_bitxt);
             this.panel1.Controls.Add(this.addbooks_clearbtn);
             this.panel1.Controls.Add(this.addbooks_uptbtn);
             this.panel1.Controls.Add(this.addbooks_dltbtn);
             this.panel1.Controls.Add(this.addbooks_addbtn);
-            this.panel1.Controls.Add(this.addbbooks_pic);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.addbooks_authortxt);
@@ -164,14 +159,14 @@
             this.addbooks_statustxt.Items.AddRange(new object[] {
             "Return",
             "Not Return"});
-            this.addbooks_statustxt.Location = new System.Drawing.Point(87, 240);
+            this.addbooks_statustxt.Location = new System.Drawing.Point(87, 263);
             this.addbooks_statustxt.Name = "addbooks_statustxt";
             this.addbooks_statustxt.Size = new System.Drawing.Size(121, 24);
             this.addbooks_statustxt.TabIndex = 5;
             // 
             // addbooks_bitxt
             // 
-            this.addbooks_bitxt.Location = new System.Drawing.Point(87, 205);
+            this.addbooks_bitxt.Location = new System.Drawing.Point(87, 228);
             this.addbooks_bitxt.Name = "addbooks_bitxt";
             this.addbooks_bitxt.Size = new System.Drawing.Size(200, 22);
             this.addbooks_bitxt.TabIndex = 4;
@@ -210,7 +205,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("SF Pro Display", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 246);
+            this.label1.Location = new System.Drawing.Point(5, 269);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 18);
             this.label1.TabIndex = 0;
@@ -246,6 +241,32 @@
             this.panel2.Size = new System.Drawing.Size(465, 469);
             this.panel2.TabIndex = 3;
             // 
+            // abimport_txt
+            // 
+            this.abimport_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.abimport_txt.FlatAppearance.BorderSize = 0;
+            this.abimport_txt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(128)))), ((int)(((byte)(235)))));
+            this.abimport_txt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(82)))), ((int)(((byte)(255)))));
+            this.abimport_txt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.abimport_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.abimport_txt.ForeColor = System.Drawing.Color.White;
+            this.abimport_txt.Location = new System.Drawing.Point(106, 100);
+            this.abimport_txt.Name = "abimport_txt";
+            this.abimport_txt.Size = new System.Drawing.Size(75, 30);
+            this.abimport_txt.TabIndex = 7;
+            this.abimport_txt.Text = "Import";
+            this.abimport_txt.UseVisualStyleBackColor = false;
+            this.abimport_txt.Click += new System.EventHandler(this.abimport_txt_Click);
+            // 
+            // abimagebox
+            // 
+            this.abimagebox.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.abimagebox.Location = new System.Drawing.Point(101, 7);
+            this.abimagebox.Name = "abimagebox";
+            this.abimagebox.Size = new System.Drawing.Size(90, 90);
+            this.abimagebox.TabIndex = 6;
+            this.abimagebox.TabStop = false;
+            // 
             // AddBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -254,12 +275,12 @@
             this.Controls.Add(this.panel1);
             this.Name = "AddBooks";
             this.Size = new System.Drawing.Size(768, 476);
-            ((System.ComponentModel.ISupportInitialize)(this.addbbooks_pic)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.abimagebox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -271,7 +292,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox addbooks_authortxt;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox addbbooks_pic;
         private System.Windows.Forms.Button addbooks_addbtn;
         private System.Windows.Forms.Button addbooks_uptbtn;
         private System.Windows.Forms.Panel panel1;
@@ -283,5 +303,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button addbooks_clearbtn;
         private System.Windows.Forms.Button addbooks_dltbtn;
+        private System.Windows.Forms.Button abimport_txt;
+        private System.Windows.Forms.PictureBox abimagebox;
     }
 }
