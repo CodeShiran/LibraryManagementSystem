@@ -186,5 +186,8 @@
   <ItemGroup>
     <None Include="Assests\note-book %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Books Directory\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

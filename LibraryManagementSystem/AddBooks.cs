@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace LibraryManagementSystem
 {
@@ -48,19 +49,31 @@ namespace LibraryManagementSystem
             }
             else
             {
-                if(connection.State == ConnectionState.Open)
+                if(connection.State != ConnectionState.Open)
                 {
                     try
                     {
                         DateTime today= DateTime.Today;
                         connection.Open();
-                        using (SqlCommand command = new SqlCommand("INSERT INTO books (book_title,author,publish_date,status,date_insert) VALUES(@title,@author,@publishdate,@status,@dateinsert)", connection))
+                        string path = Path.Combine(@"D:\My\CS P\1019\LibraryManagementSystem\LibraryManagementSystem\Books Directory\"+addbooks_bttxt.Text.Trim()+"_"+ addbooks_authortxt.Text.Trim()+"_" + ".jpg");
+
+                        string directoryPath= Path.GetDirectoryName(path);
+
+                        if (!Directory.Exists(directoryPath))
+                        {
+                            Directory.CreateDirectory(directoryPath);
+                        }
+
+                        File.Copy(abimagebox.ImageLocation,path, true);
+
+                        using (SqlCommand command = new SqlCommand("INSERT INTO books (book_title,author,publish_date,image,status,date_insert) VALUES(@title,@author,@publishdate,@image,@status,@dateinsert)", connection))
                         {
                             command.Parameters.AddWithValue("@title",addbooks_bttxt.Text.Trim());
                             command.Parameters.AddWithValue("@author",addbooks_authortxt.Text.Trim());
-                            command.Parameters.AddWithValue("@publishdate",addbooks_bitxt.Text.Trim());
-                            command.Parameters.AddWithValue("@status",addbooks_statustxt.Text.Trim());
-                            command.Parameters.AddWithValue("@dateinsert", today.ToString());
+                            command.Parameters.AddWithValue("@publishdate",addbooks_bitxt.Value);
+                            command.Parameters.AddWithValue("@image", abimagebox.ImageLocation);
+                            command.Parameters.AddWithValue("@status",addbooks_statustxt.Text.Trim());               
+                            command.Parameters.AddWithValue("@dateinsert", today);
 
                             command.ExecuteNonQuery();
 

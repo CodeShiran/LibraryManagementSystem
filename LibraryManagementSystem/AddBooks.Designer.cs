@@ -36,6 +36,8 @@
             this.addbooks_addbtn = new System.Windows.Forms.Button();
             this.addbooks_uptbtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.abimport_txt = new System.Windows.Forms.Button();
+            this.abimagebox = new System.Windows.Forms.PictureBox();
             this.addbooks_statustxt = new System.Windows.Forms.ComboBox();
             this.addbooks_bitxt = new System.Windows.Forms.DateTimePicker();
             this.addbooks_clearbtn = new System.Windows.Forms.Button();
@@ -44,12 +46,10 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.abimport_txt = new System.Windows.Forms.Button();
-            this.abimagebox = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.abimagebox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.abimagebox)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -153,6 +153,33 @@
             this.panel1.Size = new System.Drawing.Size(290, 470);
             this.panel1.TabIndex = 2;
             // 
+            // abimport_txt
+            // 
+            this.abimport_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
+            this.abimport_txt.FlatAppearance.BorderSize = 0;
+            this.abimport_txt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(128)))), ((int)(((byte)(235)))));
+            this.abimport_txt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(82)))), ((int)(((byte)(255)))));
+            this.abimport_txt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.abimport_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.abimport_txt.ForeColor = System.Drawing.Color.White;
+            this.abimport_txt.Location = new System.Drawing.Point(106, 100);
+            this.abimport_txt.Name = "abimport_txt";
+            this.abimport_txt.Size = new System.Drawing.Size(75, 30);
+            this.abimport_txt.TabIndex = 7;
+            this.abimport_txt.Text = "Import";
+            this.abimport_txt.UseVisualStyleBackColor = false;
+            this.abimport_txt.Click += new System.EventHandler(this.abimport_txt_Click);
+            // 
+            // abimagebox
+            // 
+            this.abimagebox.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.abimagebox.Location = new System.Drawing.Point(101, 7);
+            this.abimagebox.Name = "abimagebox";
+            this.abimagebox.Size = new System.Drawing.Size(90, 90);
+            this.abimagebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.abimagebox.TabIndex = 6;
+            this.abimagebox.TabStop = false;
+            // 
             // addbooks_statustxt
             // 
             this.addbooks_statustxt.FormattingEnabled = true;
@@ -241,32 +268,6 @@
             this.panel2.Size = new System.Drawing.Size(465, 469);
             this.panel2.TabIndex = 3;
             // 
-            // abimport_txt
-            // 
-            this.abimport_txt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(99)))), ((int)(((byte)(235)))));
-            this.abimport_txt.FlatAppearance.BorderSize = 0;
-            this.abimport_txt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(128)))), ((int)(((byte)(235)))));
-            this.abimport_txt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(82)))), ((int)(((byte)(255)))));
-            this.abimport_txt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.abimport_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.abimport_txt.ForeColor = System.Drawing.Color.White;
-            this.abimport_txt.Location = new System.Drawing.Point(106, 100);
-            this.abimport_txt.Name = "abimport_txt";
-            this.abimport_txt.Size = new System.Drawing.Size(75, 30);
-            this.abimport_txt.TabIndex = 7;
-            this.abimport_txt.Text = "Import";
-            this.abimport_txt.UseVisualStyleBackColor = false;
-            this.abimport_txt.Click += new System.EventHandler(this.abimport_txt_Click);
-            // 
-            // abimagebox
-            // 
-            this.abimagebox.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.abimagebox.Location = new System.Drawing.Point(101, 7);
-            this.abimagebox.Name = "abimagebox";
-            this.abimagebox.Size = new System.Drawing.Size(90, 90);
-            this.abimagebox.TabIndex = 6;
-            this.abimagebox.TabStop = false;
-            // 
             // AddBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -277,10 +278,10 @@
             this.Size = new System.Drawing.Size(768, 476);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.abimagebox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.abimagebox)).EndInit();
             this.ResumeLayout(false);
 
         }
