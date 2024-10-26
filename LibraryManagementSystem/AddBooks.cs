@@ -18,6 +18,7 @@ namespace LibraryManagementSystem
         public AddBooks()
         {
             InitializeComponent();
+            displayBooks();
         }
 
         private void abimport_txt_Click(object sender, EventArgs e)
@@ -82,7 +83,7 @@ namespace LibraryManagementSystem
                     }
                     catch(Exception ex)
                     {
-                        MessageBox.Show("Error Message"+ex,"Error Message",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        MessageBox.Show("Error Message "+ex.Message,"Error Message",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     }
                     finally
                     {
@@ -90,6 +91,20 @@ namespace LibraryManagementSystem
                     }
                 }
             }
+        }
+        public void displayBooks()
+        {
+            DataAddBooks dab = new DataAddBooks();
+            List<DataAddBooks> listData = dab.addBooksData();
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = listData;
+            dataGridView1.Refresh();
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

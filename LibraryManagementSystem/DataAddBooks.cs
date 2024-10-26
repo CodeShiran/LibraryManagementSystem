@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace LibraryManagementSystem
 {
@@ -14,8 +15,8 @@ namespace LibraryManagementSystem
         public int Id { get; set; }
         public string BookTitle {  get; set; }
         public string Author {  get; set; }
-        public string published {  get; set; }
-        public string status {  get; set; }
+        public string Published {  get; set; }
+        public string Status {  get; set; }
 
         public List<DataAddBooks> addBooksData()
         {
@@ -35,8 +36,8 @@ namespace LibraryManagementSystem
                             dab.Id=(int)reader["id"];
                             dab.BookTitle = reader["book_title"].ToString();
                             dab.Author = reader["author"].ToString();
-                            dab.published = reader["published_date"].ToString() ;
-                            dab.status = reader["status"].ToString();
+                            dab.Published = reader["publish_date"].ToString() ;
+                            dab.Status = reader["status"].ToString();
 
                             list.Add(dab);
                         }
@@ -44,9 +45,9 @@ namespace LibraryManagementSystem
                     }
                  
                 }
-                catch(Exception e) 
+                catch(Exception ex) 
                 {
-
+                    MessageBox.Show("Error Occurrd" + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {
@@ -55,5 +56,6 @@ namespace LibraryManagementSystem
             }
             return list;
         }
+        
     }
 }
