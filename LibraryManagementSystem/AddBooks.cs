@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using System.Drawing.Text;
 
 namespace LibraryManagementSystem
 {
@@ -56,7 +57,7 @@ namespace LibraryManagementSystem
                     {
                         DateTime today= DateTime.Today;
                         connection.Open();
-                        string path = Path.Combine(@"D:\My\CS P\1019\LibraryManagementSystem\LibraryManagementSystem\Books Directory\"+addbooks_bttxt.Text.Trim()+"_"+ addbooks_authortxt.Text.Trim()+"_" + ".jpg");
+                        string path = Path.Combine(@"D:\My\CS P\1019\LibraryManagementSystem\LibraryManagementSystem\Books Directory\"+ addbooks_authortxt.Text.Trim()+"_" + ".jpg");
 
                         string directoryPath= Path.GetDirectoryName(path);
 
@@ -79,6 +80,8 @@ namespace LibraryManagementSystem
                             command.ExecuteNonQuery();
 
                             MessageBox.Show("Successfully Added","Information Message",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                            displayBooks();
+                            clearFeilds();
                         }
                     }
                     catch(Exception ex)
@@ -92,6 +95,14 @@ namespace LibraryManagementSystem
                 }
             }
         }
+        public void clearFeilds()
+        {
+            addbooks_bttxt.Text = "";
+            addbooks_authortxt.Text = "";
+            addbooks_bitxt.Text = "";
+            addbooks_statustxt.SelectedIndex = -1;
+            abimagebox.Image = null;
+        }
         public void displayBooks()
         {
             DataAddBooks dab = new DataAddBooks();
@@ -101,10 +112,34 @@ namespace LibraryManagementSystem
             dataGridView1.Refresh();
 
         }
-
+        private int bookId = 0;
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row=dataGridView1.Rows[e.RowIndex];
+                bookId = (int)row.Cells[0].Value;
+                addbooks_bttxt.Text = row.Cells[1].Value.ToString();
+                addbooks_authortxt.Text=row.Cells[2].Value.ToString();
+                addbooks_bitxt.Text= row.Cells[3].Value.ToString();
+                string imagePath=row.Cells[4].Value?.ToString();
 
+                if (imagePath != null || imagePath.Length>=1)
+                {
+                    abimagebox.Image=Image.FromFile(imagePath); 
+                }
+                else
+                {
+                    abimagebox.Image=null;
+                }
+                addbooks_statustxt.Text = row.Cells[5].Value.ToString();
+            }
+        }
+
+        private void addbooks_clearbtn_Click(object sender, EventArgs e)
+        {
+            clearFeilds();
         }
     }
 }

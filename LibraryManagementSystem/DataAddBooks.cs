@@ -16,7 +16,11 @@ namespace LibraryManagementSystem
         public string BookTitle {  get; set; }
         public string Author {  get; set; }
         public string Published {  get; set; }
+
+        public string Image { get; set; }
         public string Status {  get; set; }
+
+        
 
         public List<DataAddBooks> addBooksData()
         {
@@ -30,20 +34,26 @@ namespace LibraryManagementSystem
                     using (SqlCommand cmd = new SqlCommand("SELECT * FROM books WHERE date_delete IS NULL", connection))
                     {
                         SqlDataReader reader= cmd.ExecuteReader(); 
-                        DataAddBooks dab=new DataAddBooks();
+                        
                         while (reader.Read())
                         {
-                            dab.Id=(int)reader["id"];
-                            dab.BookTitle = reader["book_title"].ToString();
-                            dab.Author = reader["author"].ToString();
-                            dab.Published = reader["publish_date"].ToString() ;
-                            dab.Status = reader["status"].ToString();
+                            DataAddBooks dab = new DataAddBooks
+                            {
+                                Id = (int)reader["id"],
+                                BookTitle = reader["book_title"].ToString(),
+                                Author = reader["author"].ToString(),
+                                Published = reader["publish_date"].ToString(),
+                                Status = reader["status"].ToString(),
+                                Image = reader["image"].ToString()
 
+
+                                
+                            };
                             list.Add(dab);
                         }
                         reader.Close();
                     }
-                 
+                    
                 }
                 catch(Exception ex) 
                 {

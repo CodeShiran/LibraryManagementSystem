@@ -43,13 +43,13 @@
             this.addbooks_clearbtn = new System.Windows.Forms.Button();
             this.addbooks_dltbtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.abimagebox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -212,6 +212,7 @@
             this.addbooks_clearbtn.TabIndex = 3;
             this.addbooks_clearbtn.Text = "CLEAR";
             this.addbooks_clearbtn.UseVisualStyleBackColor = false;
+            this.addbooks_clearbtn.Click += new System.EventHandler(this.addbooks_clearbtn_Click);
             // 
             // addbooks_dltbtn
             // 
@@ -238,17 +239,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Status";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 28);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(458, 438);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -262,12 +252,23 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.label8);
             this.panel2.Location = new System.Drawing.Point(300, 4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(465, 469);
             this.panel2.TabIndex = 3;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(4, 25);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(458, 441);
+            this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // AddBooks
             // 
@@ -280,9 +281,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.abimagebox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -297,7 +298,6 @@
         private System.Windows.Forms.Button addbooks_addbtn;
         private System.Windows.Forms.Button addbooks_uptbtn;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox addbooks_statustxt;
@@ -307,5 +307,6 @@
         private System.Windows.Forms.Button addbooks_dltbtn;
         private System.Windows.Forms.Button abimport_txt;
         private System.Windows.Forms.PictureBox abimagebox;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
