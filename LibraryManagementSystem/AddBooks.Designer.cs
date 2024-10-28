@@ -130,6 +130,7 @@
             this.addbooks_uptbtn.TabIndex = 3;
             this.addbooks_uptbtn.Text = "UPDATE";
             this.addbooks_uptbtn.UseVisualStyleBackColor = false;
+            this.addbooks_uptbtn.Click += new System.EventHandler(this.addbooks_uptbtn_Click);
             // 
             // panel1
             // 
@@ -228,6 +229,7 @@
             this.addbooks_dltbtn.TabIndex = 3;
             this.addbooks_dltbtn.Text = "DELETE";
             this.addbooks_dltbtn.UseVisualStyleBackColor = false;
+            this.addbooks_dltbtn.Click += new System.EventHandler(this.addbooks_dltbtn_Click);
             // 
             // label1
             // 

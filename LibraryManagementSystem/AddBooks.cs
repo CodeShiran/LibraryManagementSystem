@@ -141,5 +141,97 @@ namespace LibraryManagementSystem
         {
             clearFeilds();
         }
+
+        private void addbooks_uptbtn_Click(object sender, EventArgs e)
+        {
+            if (abimagebox == null || addbooks_bttxt.Text == "" || addbooks_authortxt.Text == "" || addbooks_bitxt.Text == "" || addbooks_statustxt.Text == "")
+            {
+                MessageBox.Show("Plaease Do A Selection", "Warning Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Are You Sure", "Information Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        connection.Open();
+                        DateTime today = DateTime.Today;
+                        using (SqlCommand command = new SqlCommand("UPDATE books SET book_title=@title,author=@author,publish_date=@publishDate,status=@status,date_update=@dateUpdate WHERE id=@id", connection))
+                        {
+                            command.Parameters.AddWithValue("@title", addbooks_bttxt.Text.Trim());
+                            command.Parameters.AddWithValue("@author", addbooks_authortxt.Text.Trim());
+                            command.Parameters.AddWithValue("@publishDate", addbooks_bitxt.Value);
+                            command.Parameters.AddWithValue("@status", addbooks_statustxt.Text.Trim());
+                            command.Parameters.AddWithValue("@dateUpdate", today);
+                            command.Parameters.AddWithValue("@id", bookId);
+
+                            command.ExecuteNonQuery();
+
+                            MessageBox.Show("Successfully Updated", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            displayBooks();
+                            clearFeilds();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error Message " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Cancelled","Information Message",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+                
+            }
+        }
+
+        private void addbooks_dltbtn_Click(object sender, EventArgs e)
+        {
+            if (abimagebox == null || addbooks_bttxt.Text == "" || addbooks_authortxt.Text == "" || addbooks_bitxt.Text == "" || addbooks_statustxt.Text == "")
+            {
+                MessageBox.Show("Plaease Do A Selection", "Warning Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Are You Sure", "Information Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        connection.Open();
+                        DateTime today = DateTime.Today;
+                        using (SqlCommand command = new SqlCommand("UPDATE books SET date_delete=@dateDelete WHERE id=@id", connection))
+                        {
+                            command.Parameters.AddWithValue("@dateDelete",today);
+                            command.Parameters.AddWithValue("@id", bookId);
+
+                            command.ExecuteNonQuery();
+
+                            MessageBox.Show("Successfully Deleted", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            displayBooks();
+                            clearFeilds();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error Message " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Cancelled", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+        }
     }
 }
