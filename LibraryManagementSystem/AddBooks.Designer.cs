@@ -185,8 +185,8 @@
             // 
             this.addbooks_statustxt.FormattingEnabled = true;
             this.addbooks_statustxt.Items.AddRange(new object[] {
-            "Return",
-            "Not Return"});
+            "Available",
+            "Not Available"});
             this.addbooks_statustxt.Location = new System.Drawing.Point(87, 263);
             this.addbooks_statustxt.Name = "addbooks_statustxt";
             this.addbooks_statustxt.Size = new System.Drawing.Size(121, 24);
