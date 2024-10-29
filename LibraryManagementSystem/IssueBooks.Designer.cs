@@ -35,6 +35,7 @@
             this.issuebooks_returnDate = new System.Windows.Forms.DateTimePicker();
             this.issuebooks_issueDate = new System.Windows.Forms.DateTimePicker();
             this.issuebooks_author = new System.Windows.Forms.ComboBox();
+            this.issuebooks_status = new System.Windows.Forms.ComboBox();
             this.issuebooks_title = new System.Windows.Forms.ComboBox();
             this.issuebooks_image = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -50,11 +51,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.issuebooks_status = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -147,6 +147,14 @@
             this.issuebooks_author.Size = new System.Drawing.Size(122, 26);
             this.issuebooks_author.TabIndex = 4;
             // 
+            // issuebooks_status
+            // 
+            this.issuebooks_status.FormattingEnabled = true;
+            this.issuebooks_status.Location = new System.Drawing.Point(623, 12);
+            this.issuebooks_status.Name = "issuebooks_status";
+            this.issuebooks_status.Size = new System.Drawing.Size(122, 26);
+            this.issuebooks_status.TabIndex = 4;
+            // 
             // issuebooks_title
             // 
             this.issuebooks_title.FormattingEnabled = true;
@@ -154,6 +162,7 @@
             this.issuebooks_title.Name = "issuebooks_title";
             this.issuebooks_title.Size = new System.Drawing.Size(122, 26);
             this.issuebooks_title.TabIndex = 4;
+            this.issuebooks_title.SelectedIndexChanged += new System.EventHandler(this.issuebooks_title_SelectedIndexChanged);
             // 
             // issuebooks_image
             // 
@@ -310,6 +319,16 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Author";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(542, 12);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(50, 18);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Status";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -339,24 +358,6 @@
             this.label1.Size = new System.Drawing.Size(58, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Issue Id";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(542, 12);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(50, 18);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Status";
-            // 
-            // issuebooks_status
-            // 
-            this.issuebooks_status.FormattingEnabled = true;
-            this.issuebooks_status.Location = new System.Drawing.Point(623, 12);
-            this.issuebooks_status.Name = "issuebooks_status";
-            this.issuebooks_status.Size = new System.Drawing.Size(122, 26);
-            this.issuebooks_status.TabIndex = 4;
             // 
             // IssueBooks
             // 

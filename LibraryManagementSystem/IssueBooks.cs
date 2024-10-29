@@ -32,7 +32,7 @@ namespace LibraryManagementSystem
                 {
                     connection.Open();
 
-                    using (SqlCommand cmd = new SqlCommand("SELECT * FROM books WHERE status='Available' AND date_delete IS NULL", connection))
+                    using (SqlCommand cmd = new SqlCommand("SELECT id,book_title FROM books WHERE status='Available' AND date_delete IS NULL", connection))
                     {
                         SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                         DataTable dt = new DataTable();
@@ -50,6 +50,58 @@ namespace LibraryManagementSystem
                 finally
                 {
                     connection.Close();
+                }
+            }
+            
+        }
+
+        private void issuebooks_title_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (connection.State!= ConnectionState.Open)
+            {
+                if (issuebooks_title.SelectedIndex != -1)
+                {
+                    DataRowView SelectedRow = (DataRowView)issuebooks_title.SelectedItem;
+                    int selectId = Convert.ToInt32(SelectedRow["id"]);
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlCommand cmd = new SqlCommand("SELECT * FROM books WHERE id=@id", connection))
+                        {
+                            cmd.Parameters.AddWithValue("@id", selectId);
+
+                            SqlDataAdapter sd = new SqlDataAdapter(cmd);
+                            DataTable table = new DataTable();
+                            sd.Fill(table);
+
+                            if (table.Rows.Count > 0)
+                            {
+                                issuebooks_author.Text = table.Rows[0]["author"].ToString();
+
+                                string imagePath = table.Rows[0]["image"].ToString();
+
+                                if (imagePath != null)
+                                {
+                                    issuebooks_image.Image = Image.FromFile(imagePath);
+                                }
+                                else
+                                {
+                                    issuebooks_image.Image = null;
+                                }
+                            }
+
+
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error Message " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
                 }
             }
             
