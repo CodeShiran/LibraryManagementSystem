@@ -19,7 +19,6 @@ namespace LibraryManagementSystem
         public string Email { get; set; }
         public string BookTitle { get; set; }
         public string Author {  get; set; }
-        public string Image {get; set; }
         public string DateIssue {  get; set; }  
         public string DateReturn {  get; set; }
         public string status {  get; set; }
@@ -46,7 +45,6 @@ namespace LibraryManagementSystem
                             db.Email = reader["email"].ToString();
                             db.BookTitle=reader["book_title"].ToString();
                             db.Author = reader["author"].ToString();
-                            db.Image = reader["image"].ToString();
                             db.DateIssue = reader["issue_date"].ToString();
                             db.DateReturn = reader["return_date"].ToString();
                             db.status = reader["status"].ToString();

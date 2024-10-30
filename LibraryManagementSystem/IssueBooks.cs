@@ -27,10 +27,64 @@ namespace LibraryManagementSystem
 
             dataGridView1.DataSource = list;
         }
+        public void clearFeilds()
+        {
+            issuebooks_id.Text = "";
+            issuebooks_name.Text = "";
+            issuebooks_tel.Text ="";
+            issuebooks_email.Text ="";
+            issuebooks_title.SelectedIndex =-1;
+            issuebooks_author.SelectedIndex = -1;
+            issuebooks_issueDate = null;
+            issuebooks_returnDate= null;
+            issuebooks_status.SelectedIndex =-1;
+            issuebooks_image.Image = null;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (issuebooks_id.Text == "" || issuebooks_name.Text=="" || issuebooks_tel.Text=="" || issuebooks_email.Text=="" || issuebooks_title.Text=="" || issuebooks_author.Text=="" || issuebooks_issueDate.Value==null || issuebooks_returnDate.Value==null || issuebooks_status.Text=="")
+            {
+                MessageBox.Show("Fill All The Feilds", "Warning Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                try
+                {
+                    DateTime today= DateTime.Today;
+                    connection.Open();
+                    using (SqlCommand cmd = new SqlCommand("INSERT INTO issues (issue_id,full_name,contact,email,book_title,author,status,issue_date,return_date,insert_date) VALUES (@id,@name,@contact,@email,@title,@author,@status,@issueDate,@returnDate,@insertDate)",connection))
+                    {
+                        cmd.Parameters.AddWithValue("@id", issuebooks_id.Text.Trim());
+                        cmd.Parameters.AddWithValue("@name", issuebooks_name.Text.Trim());
+                        cmd.Parameters.AddWithValue("@contact", issuebooks_tel.Text.Trim());
+                        cmd.Parameters.AddWithValue("@email", issuebooks_email.Text.Trim());
+                        cmd.Parameters.AddWithValue("@title", issuebooks_title.Text.Trim());
+                        cmd.Parameters.AddWithValue("@author", issuebooks_author.Text.Trim());
+                        cmd.Parameters.AddWithValue("@status", issuebooks_status.Text.Trim());
+                        cmd.Parameters.AddWithValue("@issueDate", issuebooks_issueDate.Value);
+                        cmd.Parameters.AddWithValue("@returnDate", issuebooks_returnDate.Value);
+                        cmd.Parameters.AddWithValue("@insertDate",today);
 
+                        cmd.ExecuteNonQuery();
+
+                        displayBookIssueData();
+
+                        MessageBox.Show("Successfully Inserted","Information Message",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+                        clearFeilds();
+
+                    }
+                }
+                catch(Exception ex) 
+                {
+                    MessageBox.Show("Error Message " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
         }
         public void DataBookTitle()
         {
