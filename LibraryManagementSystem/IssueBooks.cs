@@ -18,6 +18,14 @@ namespace LibraryManagementSystem
         {
             InitializeComponent();
             DataBookTitle();
+            displayBookIssueData();
+        }
+        public void displayBookIssueData()
+        {
+            DataIssueBook dataIssueBook = new DataIssueBook();
+            List<DataIssueBook> list = dataIssueBook.IssueBooksData();
+
+            dataGridView1.DataSource = list;
         }
 
         private void button1_Click(object sender, EventArgs e)

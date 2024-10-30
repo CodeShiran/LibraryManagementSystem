@@ -59,6 +59,7 @@
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="DataAddBooks.cs" />
+    <Compile Include="DataIssueBook.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

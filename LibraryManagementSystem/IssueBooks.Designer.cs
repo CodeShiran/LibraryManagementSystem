@@ -150,6 +150,9 @@
             // issuebooks_status
             // 
             this.issuebooks_status.FormattingEnabled = true;
+            this.issuebooks_status.Items.AddRange(new object[] {
+            "Return",
+            "Not Return"});
             this.issuebooks_status.Location = new System.Drawing.Point(623, 12);
             this.issuebooks_status.Name = "issuebooks_status";
             this.issuebooks_status.Size = new System.Drawing.Size(122, 26);
@@ -166,9 +169,11 @@
             // 
             // issuebooks_image
             // 
+            this.issuebooks_image.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.issuebooks_image.Location = new System.Drawing.Point(645, 53);
             this.issuebooks_image.Name = "issuebooks_image";
             this.issuebooks_image.Size = new System.Drawing.Size(100, 100);
+            this.issuebooks_image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.issuebooks_image.TabIndex = 3;
             this.issuebooks_image.TabStop = false;
             // 
