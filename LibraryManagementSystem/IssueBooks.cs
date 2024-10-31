@@ -68,9 +68,10 @@ namespace LibraryManagementSystem
 
                         cmd.ExecuteNonQuery();
 
-                        displayBookIssueData();
+                        
 
                         MessageBox.Show("Successfully Inserted","Information Message",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        displayBookIssueData();
 
                         clearFeilds();
 
@@ -167,6 +168,30 @@ namespace LibraryManagementSystem
                 }
             }
             
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >=0)
+            {
+                DataGridViewRow row= dataGridView1.Rows[e.RowIndex];
+                issuebooks_id.Text = row.Cells[1].Value.ToString();
+                issuebooks_name.Text = row.Cells[2].Value.ToString();
+                issuebooks_tel.Text = row.Cells[3].Value.ToString();
+                issuebooks_email.Text = row.Cells[4].Value.ToString();
+                issuebooks_title.Text = row.Cells[5].Value.ToString();
+                issuebooks_author.Text = row.Cells[6].Value.ToString();
+                issuebooks_issueDate.Text = row.Cells[7].Value.ToString();
+                issuebooks_returnDate.Text = row.Cells[8].Value.ToString();
+                issuebooks_status.Text = row.Cells[9].Value.ToString();
+
+
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            clearFeilds();
         }
     }
 }

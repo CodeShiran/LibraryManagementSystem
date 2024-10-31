@@ -35,7 +35,7 @@ namespace LibraryManagementSystem
                     using (SqlCommand cmd = new SqlCommand("SELECT * FROM issues WHERE delete_date IS NULL", connection))
                     {
                         SqlDataReader reader = cmd.ExecuteReader();
-                        if (reader.Read())
+                        while (reader.Read())
                         {
                             DataIssueBook db = new DataIssueBook();
                             db.Id=(int)reader["ID"];
