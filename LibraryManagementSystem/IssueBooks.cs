@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -181,9 +182,12 @@ namespace LibraryManagementSystem
                 issuebooks_email.Text = row.Cells[4].Value.ToString();
                 issuebooks_title.Text = row.Cells[5].Value.ToString();
                 issuebooks_author.Text = row.Cells[6].Value.ToString();
-                issuebooks_issueDate.Text = row.Cells[7].Value.ToString();
-                issuebooks_returnDate.Text = row.Cells[8].Value.ToString();
+                issuebooks_issueDate.Value = Convert.ToDateTime(row.Cells[7].Value).Date;
+                issuebooks_returnDate.Value = Convert.ToDateTime(row.Cells[8].Value).Date;
                 issuebooks_status.Text = row.Cells[9].Value.ToString();
+
+                
+
 
 
             }
@@ -192,6 +196,60 @@ namespace LibraryManagementSystem
         private void button4_Click(object sender, EventArgs e)
         {
             clearFeilds();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (issuebooks_id.Text == "" || issuebooks_name.Text == "" || issuebooks_tel.Text == "" || issuebooks_email.Text == "" || issuebooks_title.Text == "" || issuebooks_author.Text == "" || issuebooks_issueDate.Value == null || issuebooks_returnDate.Value == null || issuebooks_status.Text == "")
+            {
+                MessageBox.Show("Plaease Do A Selection", "Warning Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Are You Sure", "Information Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        connection.Open();
+                        DateTime today = DateTime.Today;
+                        using (SqlCommand command = new SqlCommand("UPDATE issues SET full_name=@name,contact=@contact,email=@email,book_title=@title,author=@author,status=@status,issue_date=@issueDate,return_date=@returnDate,update_date=@updateDate WHERE issue_id=@issueId", connection))
+                        {
+                            command.Parameters.AddWithValue("@name",issuebooks_name.Text.Trim());
+                            command.Parameters.AddWithValue("@contact", issuebooks_tel.Text.Trim());
+                            command.Parameters.AddWithValue("@email", issuebooks_email.Text.Trim());
+                            command.Parameters.AddWithValue("@title", issuebooks_title.Text.Trim());
+                            command.Parameters.AddWithValue("@author", issuebooks_author.Text.Trim());
+                            command.Parameters.AddWithValue("@status", issuebooks_status.Text.Trim());
+                            command.Parameters.AddWithValue("@issueDate", issuebooks_issueDate.Value);
+                            command.Parameters.AddWithValue("@returnDate", issuebooks_returnDate.Value);
+                            command.Parameters.AddWithValue("@updateDate", today);
+                            command.Parameters.AddWithValue("@issueId", issuebooks_id.Text.Trim());
+
+
+                            command.ExecuteNonQuery();
+
+                            MessageBox.Show("Successfully Updated", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            displayBookIssueData();
+
+                            clearFeilds();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error Message " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Cancelled", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
         }
     }
 }
