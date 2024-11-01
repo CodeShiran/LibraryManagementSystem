@@ -17,11 +17,23 @@ namespace LibraryManagementSystem
         public ReturnBooks()
         {
             InitializeComponent();
+            displayReturnedBookData();
         }
 
         private void rbimport_txt_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void returnBooks_retrurnBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+        public void displayReturnedBookData()
+        {
+            DataIssueBook db= new DataIssueBook();
+            List<DataIssueBook> list = db.IssueBooksData();
+            dataGridView1.DataSource = list;
         }
     }
 }
