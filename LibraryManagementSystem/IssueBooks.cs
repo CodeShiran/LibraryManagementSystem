@@ -251,5 +251,51 @@ namespace LibraryManagementSystem
 
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (issuebooks_id.Text == "" || issuebooks_name.Text == "" || issuebooks_tel.Text == "" || issuebooks_email.Text == "" || issuebooks_title.Text == "" || issuebooks_author.Text == "" || issuebooks_issueDate.Value == null || issuebooks_returnDate.Value == null || issuebooks_status.Text == "")
+            {
+                MessageBox.Show("Plaease Do A Selection", "Warning Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Are You Sure", "Information Message", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        connection.Open();
+                        DateTime today = DateTime.Today;
+                        using (SqlCommand command = new SqlCommand("UPDATE issues SET delete_date=@deleteDate WHERE issue_id=@issueId", connection))
+                        {
+                            command.Parameters.AddWithValue("@deleteDate", today);
+                            command.Parameters.AddWithValue("@issueId", issuebooks_id.Text.Trim());
+
+
+                            command.ExecuteNonQuery();
+
+                            MessageBox.Show("Successfully Updated", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            displayBookIssueData();
+
+                            clearFeilds();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error Message " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Cancelled", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+        }
     }
 }
