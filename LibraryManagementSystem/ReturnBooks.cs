@@ -32,7 +32,7 @@ namespace LibraryManagementSystem
         public void displayReturnedBookData()
         {
             DataIssueBook db= new DataIssueBook();
-            List<DataIssueBook> list = db.IssueBooksData();
+            List<DataIssueBook> list = db.ReturnIssueBooksData();
             dataGridView1.DataSource = list;
         }
     }

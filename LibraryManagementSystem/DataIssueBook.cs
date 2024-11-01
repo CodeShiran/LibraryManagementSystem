@@ -68,5 +68,50 @@ namespace LibraryManagementSystem
             }
             return listData;
         }
+        public List<DataIssueBook> ReturnIssueBooksData()
+        {
+            List<DataIssueBook> listData = new List<DataIssueBook>();
+            if (connection.State != ConnectionState.Open)
+            {
+                try
+                {
+                    connection.Open();
+                    using (SqlCommand cmd = new SqlCommand("SELECT * FROM issues WHERE status='Not Return' AND delete_date IS NULL", connection))
+                    {
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        while (reader.Read())
+                        {
+                            DataIssueBook db = new DataIssueBook();
+                            db.Id = (int)reader["ID"];
+                            db.IssueId = reader["issue_id"].ToString();
+                            db.Name = reader["full_name"].ToString();
+                            db.Contact = reader["contact"].ToString();
+                            db.Email = reader["email"].ToString();
+                            db.BookTitle = reader["book_title"].ToString();
+                            db.Author = reader["author"].ToString();
+                            db.DateIssue = reader["issue_date"].ToString();
+                            db.DateReturn = reader["return_date"].ToString();
+                            db.status = reader["status"].ToString();
+
+                            listData.Add(db);
+
+
+
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error Message " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+
+            }
+            return listData;
+        }
+
     }
 }
